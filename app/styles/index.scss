@@ -1,1 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+    text-align: center;
+    margin: auto;
+    width: 55%;
+    padding: 10px;
+    background-color: darkgrey;
+}
+
+@media only screen and (max-width: 500px) {
+
+    body {
+        font-size: 120%;
+        width: 95%;
+        margin: 5px;
+        background-color: palegreen
+    }
+}
