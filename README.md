@@ -36,7 +36,6 @@ To play the deployed version of this game at its online location, [click here](h
 #### Wireframe
 
 In the planning of this application, a wireframe was needed to help visualize the project. ![wireframe](https://media.git.generalassemb.ly/user/41818/files/ec493680-ba6f-11ec-8b38-f2caf2f840e6)
-![wireframe](public/IMG_2846.heic)
 
 #### User Stories
 

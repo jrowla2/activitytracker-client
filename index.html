@@ -34,16 +34,8 @@
         <section id="auth-display"></section>
       </div>
     
-      <!-- the game user view -->
+      <!-- dashboard user view -->
       <div id="auth">
-        <h1>Welcome!</h1>
-        <h2></h2>
-        <!-- user data go here -->
-        <br>
-        <div id="result"></div>
-        <button id="restart-game-button">Restart Game</button>
-        <br>
-        <br>
         <h5>Change Password</h5>
         <form id="change-password-form">
           <input name="passwords[old]" type="password" placeholder="Enter old password">
@@ -52,6 +44,57 @@
         </form>
         <br>
         <button id="sign-out-button">Sign-Out</button>
+
+        <header>
+          <h1>Activity CRUD</h1>
+        </header>
+        <main>
+          <section>
+            <h2>Get All Books</h2>
+            <button id="books-index">Get All Books</button>
+            <hr>
+        
+            <h2>Get One Book</h2>
+            <form id="books-show">
+              <input type='text' name="book[id]" placeholder="Book ID Here" required>
+              <button type="submit">Get Book</button>
+            </form>
+            <hr>
+        
+            <h2>Destroy One Book</h2>
+            <form id="books-destroy">
+              <input type="text" name="book[id]" placeholder="Book ID Here" required>
+              <button type="submit">Delete Book</button>
+            </form>
+            <div id="books-destroy-message"></div>
+            <hr>
+        
+            <h2>Update A Book</h2>
+            <form id="books-update">
+              <input type='text' name="book[id]" id="book-id-update" placeholder="Book ID Here" required>
+              <input type="text" name="book[title]" placeholder="Book Title Here" required>
+              <input type="text" name="book[author]" placeholder="Book Author Here" required>
+              <button type="submit">Update Book</button>
+            </form>
+            <div id="books-update-message"></div>
+            <hr>
+        
+            <h2>Create One Book</h2>
+            <form id="books-create">
+              <input type="text" name="book[title]" placeholder="Book Title Here" required>
+              <input type="text" name="book[author]" placeholder="Book Author Here" required>
+              <button type="submit">Create Book</button>
+            </form>
+            <div id="books-create-message"></div>
+            <hr>
+          </section>
+        
+          <section>
+            <div id="error-message"></div>
+            <div id="books-display"></div>
+          </section>
+        </main>
+
       </div>
     </body>
     

@@ -1,54 +1,56 @@
 'use strict'
 
-const store = require('../store.js')
-const config = require('../config.js')
+const config = require('./../config')
 
-const createTrack = function () {
+// make GET request to /books to get all books
+// getting all of a resource is commonly called an index or list action
+const index = function () {
   return $.ajax({
-    method: 'POST',
     url: config.apiUrl + '/tracks',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    data: {}
+    method: 'GET'
   })
 }
 
-const updateTrack = function () {
+// make GET request to /books/:id to get a single book
+// getting a single resource is commonly called a show or retrieve action
+const show = function (id) {
   return $.ajax({
+    url: config.apiUrl + '/tracks/' + id,
+    method: 'GET'
+  })
+}
+
+// make DELETE request to /books/:id to delete a single book
+// deleting a single resource is commonly called a destroy action
+const destroy = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/tracks/' + id,
+    method: 'DELETE'
+  })
+}
+
+const update = function (id, formData) {
+  return $.ajax({
+    url: config.apiUrl + '/tracks/' + id,
     method: 'PATCH',
-    url: config.apiUrl + '/tracks/' + store.track._id,
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    data: {}
+    // include the book data that we will use to update the book
+    data: formData
   })
 }
 
-const indexTrack = function (data) {
+const create = function (formData) {
   return $.ajax({
-    method: 'READ',
-    url: config.apiUrl + '/index-track',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    data
-  })
-}
-
-const deleteTrack = function () {
-  return $.ajax({
-    method: 'DELETE',
-    url: config.apiUrl + '/sign-out',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
+    url: config.apiUrl + '/tracks',
+    method: 'POST',
+    // include the book data that we will use to create the book
+    data: formData
   })
 }
 
 module.exports = {
-  signUp,
-  signIn,
-  changePassword,
-  signOut
+  index,
+  show,
+  destroy,
+  update,
+  create
 }

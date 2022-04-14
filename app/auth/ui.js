@@ -33,8 +33,8 @@ const onSignInSuccess = function (response) {
   // $('#sign-in-form').trigger('reset')
 
   // these functions are toggling what classes of html are shown
-  $('#unAuth').hide()
-  $('#auth').show()
+//   $('#unAuth').hide()
+//   $('#auth').show()
 }
 
 const onSignInFailure = () => {
@@ -56,8 +56,8 @@ const onSignOutSuccess = function () {
 
   $('form').trigger('reset')
   // these functions are hiding the game and showing the log in
-  $('#auth').hide()
-  $('#unAuth').show()
+//   $('#auth').hide()
+//   $('#unAuth').show()
 }
 
 const onSignOutFailure = function () {
