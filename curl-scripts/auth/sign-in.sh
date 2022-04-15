@@ -1,7 +1,7 @@
 #!/bin/bash
 
-EMAIL="jeff@mail.com"
-PASSWORD="321"
+# EMAIL="kay@mail.com"
+# PASSWORD="jeff"
 
 API="http://localhost:4741"
 URL_PATH="/sign-in"

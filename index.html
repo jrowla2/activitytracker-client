@@ -16,18 +16,18 @@
       <h1>Outdoor Activity Tracker</h1>
       <br>
       <div id="unAuth">
-        <h3>To get started, please sign up below</h3>
+        <h3>To get started, please sign-up below</h3>
         <form id="sign-up-form">
           <input name="credentials[email]" type="email" placeholder="Email">
           <input name="credentials[password]" type="password" placeholder="Enter password">
-          <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again">
+          <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again"><br>
           <button type="submit">Sign-Up</button>
         </form>
         <br>
         <h3>Following sign-up, please sign-in</h3>
         <form id="sign-in-form">
           <input name="credentials[email]" type="email" placeholder="Email">
-          <input name="credentials[password]" type="password" placeholder="Enter password">
+          <input name="credentials[password]" type="password" placeholder="Enter password"><br>
           <button type="submit">Sign-In</button>
         </form>
     
@@ -39,59 +39,68 @@
         <h5>Change Password</h5>
         <form id="change-password-form">
           <input name="passwords[old]" type="password" placeholder="Enter old password">
-          <input name="passwords[new]" type="password" placeholder="Enter new password">
+          <input name="passwords[new]" type="password" placeholder="Enter new password"><br>
           <button type="submit">Change Password</button>
         </form>
         <br>
         <button id="sign-out-button">Sign-Out</button>
-
         <header>
-          <h1>Activity CRUD</h1>
+          <h1>Activity Dashboard</h1>
         </header>
         <main>
           <section>
-            <h2>Get All Books</h2>
-            <button id="books-index">Get All Books</button>
+            <h2>Get All Tracks</h2>
+            <button id="tracks-index">Get All Tracks</button>
             <hr>
         
-            <h2>Get One Book</h2>
-            <form id="books-show">
-              <input type='text' name="book[id]" placeholder="Book ID Here" required>
-              <button type="submit">Get Book</button>
+            <h2>Get One Track</h2>
+            <form id="tracks-show">
+              <input type="text" name="track[id]" placeholder="Track ID Here" required><br>
+              <button type="submit">Get Track</button>
             </form>
             <hr>
         
-            <h2>Destroy One Book</h2>
-            <form id="books-destroy">
-              <input type="text" name="book[id]" placeholder="Book ID Here" required>
-              <button type="submit">Delete Book</button>
+            <h2>Destroy One Track</h2>
+            <form id="tracks-destroy">
+              <input type="text" name="track[id]" placeholder="Track ID Here" required><br>
+              <button type="submit">Delete Track</button>
             </form>
-            <div id="books-destroy-message"></div>
+            <div id="tracks-destroy-message"></div>
             <hr>
         
-            <h2>Update A Book</h2>
-            <form id="books-update">
-              <input type='text' name="book[id]" id="book-id-update" placeholder="Book ID Here" required>
-              <input type="text" name="book[title]" placeholder="Book Title Here" required>
-              <input type="text" name="book[author]" placeholder="Book Author Here" required>
-              <button type="submit">Update Book</button>
+            <h2>Update A Track</h2>
+            <form id="tracks-update">
+              <input type="text" name="track[id]" id="track-id-update" placeholder="Track ID Here" required>
+              <input type="text" name="track[date]" placeholder="Track Date Here" required>
+              <input type="text" name="track[activity]" placeholder="Track Activity Here" required>
+              <input type="text" name="track[location]" placeholder="Track Location Here" required>
+              <input type="text" name="track[distance]" placeholder="Track Distance Here" required>
+              <input type="text" name="track[duration]" placeholder="Track Duration Here" required>
+              <input type="text" name="track[with]" placeholder="Track With Whom Here" required>
+              <input type="text" name="track[comments]" placeholder="Track Comments Here" required><br>
+              <button type="submit">Update Track</button>
             </form>
-            <div id="books-update-message"></div>
+            <div id="tracks-update-message"></div>
             <hr>
         
-            <h2>Create One Book</h2>
-            <form id="books-create">
-              <input type="text" name="book[title]" placeholder="Book Title Here" required>
-              <input type="text" name="book[author]" placeholder="Book Author Here" required>
-              <button type="submit">Create Book</button>
+            <h2>Create One Track</h2>
+            <form id="tracks-create">
+              <input type="text" name="track[date]" placeholder="Track Date Here" required>
+              <input type="text" name="track[activity]" placeholder="Track Activity Here" required>
+              <input type="text" name="track[location]" placeholder="Track Location Here" required>
+              <input type="text" name="track[distance]" placeholder="Track Distance Here" required>
+              <input type="text" name="track[duration]" placeholder="Track Duration Here" required>
+              <input type="text" name="track[with]" placeholder="Track With Whom Here" required>
+              <input type="text" name="track[comments]" placeholder="Track Comments Here" required><br>
+              <button type="submit">Create Track</button>
             </form>
-            <div id="books-create-message"></div>
+            <div id="tracks-create-message"></div>
             <hr>
           </section>
         
           <section>
             <div id="error-message"></div>
-            <div id="books-display"></div>
+            <div id="track-display"></div>
           </section>
         </main>
 

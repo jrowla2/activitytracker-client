@@ -3,12 +3,6 @@
 // const { onRestart } = require('../track/events.js')
 const store = require('../store.js')
 
-// this function is hiding the auth class in html until signed in
-// could probably hide in css as well to avoid flickering
-// $(function () {
-//   $('#auth').hide()
-// })
-
 const onSignUpSuccess = function () {
   $('#auth-display').html('<p>User signed up successfully</p>')
 

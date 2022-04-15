@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TOKEN="de6b495b3da5bc91bc70b9ae39665634"
+# TOKEN="dde9a7c8c121138fd71ffc7e1da0667b"
 
 API="http://localhost:4741"
 URL_PATH="/tracks"

@@ -6,6 +6,7 @@ const getFormFields = require('../../lib/get-form-fields.js')
 
 // Show every book (an index or list action)
 const onIndexTracks = function () {
+  // event.preventDefault()
   // make API call to get all of the books
   api.index()
 
@@ -25,7 +26,7 @@ const onShowTrack = function (event) {
   const formData = getFormFields(event.target)
 
   // make API call for getting one book with the id of the book we grabbed from the form
-  api.show(formData.book.id)
+  api.show(formData.track.id)
 
     // if the API call is successful then pass the data to the onShowSuccess
     // function
@@ -44,7 +45,7 @@ const onDestroyTrack = function (event) {
   const formData = getFormFields(event.target)
 
   // make API call for destroying one book with id of the book we grabbed from the form
-  api.destroy(formData.book.id)
+  api.destroy(formData.track.id)
 
     // if the API call is successful then invoke the onDetroySuccess function
     .then(ui.onDestroySuccess)
@@ -62,7 +63,7 @@ const onUpdateTrack = function (event) {
   const formData = getFormFields(event.target)
 
   // extract the id from our formData's book
-  const id = formData.book.id
+  const id = formData.track.id
 
   // make API call to update one book with the data we grabbed from the form
   api.update(id, formData)

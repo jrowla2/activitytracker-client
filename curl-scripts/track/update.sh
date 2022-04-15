@@ -1,14 +1,14 @@
 #!/bin/bash
 
-TOKEN="de6b495b3da5bc91bc70b9ae39665634"
-ID="62562298062c2190033a4b5d"
-DATE="2022-04-12"
-ACTIVITY="mtn bike"
-LOCATION="S mtn"
-DISTANCE="8 miles"
-DURATION="2 hours"
-WITH="Kayla, Matt, Becca, Pat"
-COMMENTS="Very windy and cold"
+# TOKEN="dde9a7c8c121138fd71ffc7e1da0667b"
+# ID="6258927344d0a272d6885d62"
+# DATE="2022-04-14"
+# ACTIVITY="run"
+# LOCATION="house"
+# DISTANCE="1 mile"
+# DURATION="1 hour"
+# WITH="Kay"
+# COMMENTS="terrible"
 
 API="http://localhost:4741"
 URL_PATH="/tracks"

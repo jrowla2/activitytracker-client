@@ -1,14 +1,13 @@
 #!/bin/bash
 
-TOKEN="de6b495b3da5bc91bc70b9ae39665634"
-DATE="2022-04-12"
-ACTIVITY="walk"
-LOCATION="neightborhood"
-DISTANCE="3 miles"
-DURATION="1 hour"
-WITH="Kay"
-COMMENTS="windy and blustery, storm front moving in"
-
+# TOKEN="dde9a7c8c121138fd71ffc7e1da0667b"
+# DATE="2022-04-14"
+# ACTIVITY="walk"
+# LOCATION="house"
+# DISTANCE="1 mile"
+# DURATION="1 hour"
+# WITH="Kay"
+# COMMENTS="nice"
 
 API="http://localhost:4741"
 URL_PATH="/tracks"

@@ -2,39 +2,49 @@
 
 const onIndexSuccess = function (responseData) {
   // extract the books from the response's data into a variable
-  const books = responseData.books
+  const tracks = responseData.tracks
 
   // log the information we get back from the API so we know how we can
   // interact with it.
-  console.log(responseData)
+  console.log(responseData.tracks)
 
   // create a string that will store the html for all of the books we want to
   // display on the page. Start as an empty string.
-  let booksHtml = ''
+  let tracksHtml = ''
 
   // loop through each book from the API
-  books.forEach(book => {
+  tracks.forEach(track => {
     // add (concatenate) the book html for each book, to the booksHtml string
     //
     // when adding the delete button add a data-id attribute, with the id of the
     // button we want to delete
     // add a data-id attribute for our dynamic edit form as well
-    booksHtml += `
-      <h4>Title: ${book.title}</h4>
-      <p>Author: ${book.author}</p>
-      <p>ID: ${book._id}</p>
-      <form class="books-update-dynamic" data-id=${book._id}>
-        <input type="text" name="book[title]" placeholder="Book Title Here" required>
-        <input type="text" name="book[author]" placeholder="Book Author Here" required>
-        <button type="submit">Update Book</button>
+    tracksHtml += `
+      <h4>Date: ${track.date}</h4>
+      <p>Activity: ${track.activity}</p>
+      <p>Location: ${track.location}</p>
+      <p>Distance: ${track.distance}</p>
+      <p>Duration: ${track.duration}</p>
+      <p>With: ${track.with}</p>
+      <p>Comments: ${track.comments}</p>
+      <p>ID: ${track._id}</p>
+      <form class="tracks-update-dynamic" data-id=${track._id}>
+        <input type="text" name="track[date]" placeholder="Track Date Here" required>
+        <input type="text" name="track[activity]" placeholder="Track Activity Type Here" required>
+        <input type="text" name="track[location]" placeholder="Track Location Here" required>
+        <input type="text" name="track[distance]" placeholder="Track Distance Here" required>
+        <input type="text" name="track[duration]" placeholder="Track Duration Here" required>
+        <input type="text" name="track[with]" placeholder="Track With Whom Here" required>
+        <input type="text" name="track[comments]" placeholder="Track Comments Here" required>
+        <button type="submit">Update Track</button>
       </form>
-      <button class='books-destroy-dynamic' data-id=${book._id}>Delete Book</button>
+      <button class='track-destroy-dynamic' data-id=${track._id}>Delete Track</button>
       <br>
     `
   })
 
   // set the html for all of our books all at once
-  $('#books-display').html(booksHtml)
+  $('#track-display').html(tracksHtml)
 }
 
 const onShowSuccess = function (responseData) {
@@ -43,14 +53,18 @@ const onShowSuccess = function (responseData) {
   console.log(responseData)
 
   // build HTML element with data for one book
-  const bookHtml = `
-    <h4>Title: ${responseData.book.title}</h4>
-    <p>Author: ${responseData.book.author}</p>
-    <br>
+  const trackHtml = `
+    <h4>Date: ${responseData.track.date}</h4>
+    <p>Activity: ${responseData.track.activity}</p>
+    <p>Location: ${responseData.track.location}</p>
+    <p>Distance: ${responseData.track.distance}</p>
+    <p>Duration: ${responseData.track.duration}</p>
+    <p>With: ${responseData.track.with}</p>
+    <p>Comments: ${responseData.track.comments}</p>
   `
 
   // replace whatever was in the books-display element with our bookHtml
-  $('#books-display').html(bookHtml)
+  $('#track-display').html(trackHtml)
 
   // reset all forms
   $('form').trigger('reset')
@@ -58,21 +72,21 @@ const onShowSuccess = function (responseData) {
 
 const onDestroySuccess = function () {
   // add success message to our books-destroy-message element
-  $('#books-destroy-message').html('Book successfully deleted!')
+  $('#tracks-destroy-message').html('Track successfully deleted!')
 
   // empty out the books-display element in case it was displaying information
   // about the book we just deleted, replace with a message for the user to get
   // all the books again.
-  $('#books-display').html('Books have changed! Click "Get All Books" again to see all the books')
+  $('#track-display').html('Tracks have changed! Click "Get All Tracks" again to see all the tracks')
 
   // add class for success messaging
-  $('#books-destroy-message').addClass('success')
+  $('#tracks-destroy-message').addClass('success')
 
   // use setTimeout to allow the success message to stay for 5 seconds before
   // the message is replaced with '' and the 'success' class is removed
   setTimeout(() => {
-    $('#books-destroy-message').html('')
-    $('#books-destroy-message').removeClass('success')
+    $('#tracks-destroy-message').html('')
+    $('#tracks-destroy-message').removeClass('success')
   }, 5000)
 
   // reset all forms
@@ -81,21 +95,21 @@ const onDestroySuccess = function () {
 
 const onUpdateSuccess = function (responseData) {
   // add success message to our books-update-message element
-  $('#books-update-message').html('You successfully updated the book')
+  $('#tracks-update-message').html('You successfully updated the track')
 
   // empty out the books-display element in case it was displaying information
   // about the book we just updated, replace with a message for the user to get
   // all the books again.
-  $('#books-display').html('Books have changed! Click "Get All Books" again to see all the books.')
+  $('#track-display').html('Tracks have changed! Click "Get All Tracks" again to see all the tracks.')
 
   // add class for success messaging
-  $('#books-update-message').addClass('success')
+  $('#tracks-update-message').addClass('success')
 
   // use setTimeout to allow the success message to stay for 5 seconds before
   // the message is replaced with '' and the 'success' class is removed
   setTimeout(() => {
-    $('#books-update-message').html('')
-    $('#books-update-message').removeClass('success')
+    $('#tracks-update-message').html('')
+    $('#tracks-update-message').removeClass('success')
   }, 5000)
 
   // reset all forms
@@ -104,21 +118,21 @@ const onUpdateSuccess = function (responseData) {
 
 const onCreateSuccess = function () {
   // add success message to content
-  $('#books-create-message').html('You created a new book!')
+  $('#tracks-create-message').html('You created a new track!')
 
   // we just created a new book!
   // we can add a message to let the users know they should request all of
   // the books again to see the newly created book included
-  $('#books-display').html('Books have changed! Click "Get All Books" again to see all the books.')
+  $('#track-display').html('Tracks have changed! Click "Get All Tracks" again to see all the tracks.')
 
   // add class for success messaging
-  $('#books-create-message').addClass('success')
+  $('#tracks-create-message').addClass('success')
 
   // use setTimeout to allow the success message to stay for 5 seconds before
   // the message is replaced with '' and the 'success' class is removed
   setTimeout(() => {
-    $('#books-create-message').html('')
-    $('#books-create-message').removeClass('success')
+    $('#tracks-create-message').html('')
+    $('#tracks-create-message').removeClass('success')
   }, 5000)
 
   // reset all forms
