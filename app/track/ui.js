@@ -42,7 +42,6 @@ const onIndexSuccess = function (responseData) {
       <br>
     `
   })
-  console.log(tracksHtml)
   // set the html for all of our books all at once
   $('#track-display').html(tracksHtml)
 }

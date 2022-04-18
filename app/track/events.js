@@ -5,8 +5,8 @@ const ui = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields.js')
 
 // Show every book (an index or list action)
-const onIndexTracks = function () {
-  // event.preventDefault()
+const onIndexTracks = function (event) {
+  event.preventDefault()
   // make API call to get all of the books
   api.index()
 
