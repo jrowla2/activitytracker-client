@@ -28,17 +28,6 @@ const onIndexSuccess = function (responseData) {
       <p>With: ${track.with}</p>
       <p>Comments: ${track.comments}</p>
       <p>ID: ${track._id}</p>
-      <form class="track-update-dynamic" data-id=${track._id}>
-        <input type="text" name="track[date]" placeholder="Date" required>
-        <input type="text" name="track[activity]" placeholder="Activity Type" required>
-        <input type="text" name="track[location]" placeholder="Location" required>
-        <input type="text" name="track[distance]" placeholder="Distance" required>
-        <input type="text" name="track[duration]" placeholder="Duration" required>
-        <input type="text" name="track[with]" placeholder="With friends?" required>
-        <input type="text" name="track[comments]" placeholder="Notes" required>
-        <button type="submit">Update Track</button>
-      </form>
-      <button class='track-destroy-dynamic' data-id=${track._id}>Delete Track</button>
       <br>
     `
   })
