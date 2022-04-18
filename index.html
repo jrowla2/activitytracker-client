@@ -12,9 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
   <body>
-    
-      <h1>Outdoor Activity Tracker</h1>
       <br>
+      <h1>Outdoor Activity Tracker</h1>
       <img src="/public/istockphoto-165731521-612x612.jpeg" alt="bike image" style="width:250px;height: 250px;"> <hr>
       <div id="start">
         <button class="member-s" id="members" type="submit">Members</button>
@@ -88,7 +87,7 @@
         <form id="tracks-update" class="todo">
           <h2>Update an Activity</h2>
           <input type="text" name="track[id]" id="track-id-update" placeholder="Activity ID" required>
-          <input type="text" name="track[date]" placeholder="Date" required>
+          <input type="date" name="track[date]" placeholder="Date" required>
           <input type="text" name="track[activity]" placeholder="Activity Type" required>
           <input type="text" name="track[location]" placeholder="Location" required>
           <input type="text" name="track[distance]" placeholder="Distance" required>
@@ -103,7 +102,7 @@
         
         <form id="tracks-create" class="todo">
           <h2>Track Your Activity</h2>
-          <input type="text" name="track[date]" placeholder="Date" required>
+          <input type="date" name="track[date]" placeholder="Date" required>
           <input type="text" name="track[activity]" placeholder="Activity Type" required>
           <input type="text" name="track[location]" placeholder="Location" required>
           <input type="text" name="track[distance]" placeholder="Distance" required>
