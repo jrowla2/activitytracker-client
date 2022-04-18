@@ -24,10 +24,23 @@ h1 {
 
 #sign-out-button {
     display: none;
-    background-color: rgb(245, 53, 27);
+    background-color: rgb(76, 104, 132);
     color: white;
     border-radius: 10%;
     transition: 150ms;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+#change-password-button {
+    background-color: rgb(76, 104, 132);
+    color: white;
+    border-radius: 10%;
+    transition: 150ms;
+    position: absolute;
+    left: 15px;
+    top: 20px;
 }
 
 #dashboard {
