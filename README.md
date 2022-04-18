@@ -20,7 +20,9 @@ You can change your password and log out at the top of the user dashboard page.
 
 #### Access Online
 
-To play the deployed version of this game at its online location, [click here](https://jrowla2.github.io/tictoktoe-client/)
+To visit the deployed app online, [click here](https://jrowla2.github.io/activitytracker-client/).
+
+To view the backend repo, [click here](https://github.com/jrowla2/activitytracker).
 
 #### Playing Locally & Making Contributions
 
@@ -49,3 +51,17 @@ In the planning of this application, a wireframe was needed to help visualize th
 - As a user, I want to see my lifetime stats if possible.
 - As a user, I want to be able to update an activity.
 - As a user, I want to be able to delete an activity.
+
+#### Technologies Used
+
+Backend:
+- Express.js
+- MongoDB
+- Mongoose
+- JavaScript
+
+Frontend:
+- jQuery
+- HTML/CSS
+- Bootstrap
+- JavaScript

@@ -1,5 +1,46 @@
 @import '~bootstrap/scss/bootstrap';
 
+#sign-up-form {
+    display: none;
+
+}
+
+#sign-in-form {
+    display: none;
+}
+
+#change-password-form {
+    display: none;
+}
+
+#sign-out-button {
+    display: none;
+    background-color: rgb(245, 53, 27);
+    color: white;
+    border-radius: 10%;
+    transition: 150ms;
+}
+
+#dashboard {
+    display: none;
+}
+
+.todo {
+
+    display: none;
+    color: solid black;
+}
+
+.enter {
+    display: none;
+}
+
+// div.displays {
+//     float: right;
+//     height: 4%;
+//     width: 50%;
+// }
+
 body {
     text-align: center;
     margin: auto;

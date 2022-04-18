@@ -28,21 +28,21 @@ const onIndexSuccess = function (responseData) {
       <p>With: ${track.with}</p>
       <p>Comments: ${track.comments}</p>
       <p>ID: ${track._id}</p>
-      <form class="tracks-update-dynamic" data-id=${track._id}>
-        <input type="text" name="track[date]" placeholder="Track Date Here" required>
-        <input type="text" name="track[activity]" placeholder="Track Activity Type Here" required>
-        <input type="text" name="track[location]" placeholder="Track Location Here" required>
-        <input type="text" name="track[distance]" placeholder="Track Distance Here" required>
-        <input type="text" name="track[duration]" placeholder="Track Duration Here" required>
-        <input type="text" name="track[with]" placeholder="Track With Whom Here" required>
-        <input type="text" name="track[comments]" placeholder="Track Comments Here" required>
+      <form class="track-update-dynamic" data-id=${track._id}>
+        <input type="text" name="track[date]" placeholder="Date" required>
+        <input type="text" name="track[activity]" placeholder="Activity Type" required>
+        <input type="text" name="track[location]" placeholder="Location" required>
+        <input type="text" name="track[distance]" placeholder="Distance" required>
+        <input type="text" name="track[duration]" placeholder="Duration" required>
+        <input type="text" name="track[with]" placeholder="With friends?" required>
+        <input type="text" name="track[comments]" placeholder="Notes" required>
         <button type="submit">Update Track</button>
       </form>
       <button class='track-destroy-dynamic' data-id=${track._id}>Delete Track</button>
       <br>
     `
   })
-
+  console.log(tracksHtml)
   // set the html for all of our books all at once
   $('#track-display').html(tracksHtml)
 }
@@ -77,10 +77,14 @@ const onDestroySuccess = function () {
   // empty out the books-display element in case it was displaying information
   // about the book we just deleted, replace with a message for the user to get
   // all the books again.
-  $('#track-display').html('Tracks have changed! Click "Get All Tracks" again to see all the tracks')
+  $('#track-display')
+    .html(
+      'Tracks have changed! Click "Get All Tracks" again to see all the tracks'
+    )
+    .fadeOut(4500)
 
   // add class for success messaging
-  $('#tracks-destroy-message').addClass('success')
+  $('#tracks-destroy-message').addClass('success').fadeOut(4500)
 
   // use setTimeout to allow the success message to stay for 5 seconds before
   // the message is replaced with '' and the 'success' class is removed
@@ -95,12 +99,18 @@ const onDestroySuccess = function () {
 
 const onUpdateSuccess = function (responseData) {
   // add success message to our books-update-message element
-  $('#tracks-update-message').html('You successfully updated the track')
+  $('#tracks-update-message')
+    .html('You successfully updated the track')
+    .fadeOut(4500)
 
   // empty out the books-display element in case it was displaying information
   // about the book we just updated, replace with a message for the user to get
   // all the books again.
-  $('#track-display').html('Tracks have changed! Click "Get All Tracks" again to see all the tracks.')
+  $('#track-display')
+    .html(
+      'Tracks have changed! Click "Get All Tracks" again to see all the tracks.'
+    )
+    .fadeOut(4500)
 
   // add class for success messaging
   $('#tracks-update-message').addClass('success')
@@ -118,12 +128,16 @@ const onUpdateSuccess = function (responseData) {
 
 const onCreateSuccess = function () {
   // add success message to content
-  $('#tracks-create-message').html('You created a new track!')
+  $('#tracks-create-message').html('You created a new track!').fadeOut(4500)
 
   // we just created a new book!
   // we can add a message to let the users know they should request all of
   // the books again to see the newly created book included
-  $('#track-display').html('Tracks have changed! Click "Get All Tracks" again to see all the tracks.')
+  $('#track-display')
+    .html(
+      'Tracks have changed! Click "Get All Tracks" again to see all the tracks.'
+    )
+    .fadeOut(4500)
 
   // add class for success messaging
   $('#tracks-create-message').addClass('success')

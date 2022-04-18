@@ -4,9 +4,13 @@
 const store = require('../store.js')
 
 const onSignUpSuccess = function () {
-  $('#auth-display').html('<p>User signed up successfully</p>')
+  $('#auth-display')
+    .html('<p>User signed up successfully</p>')
+    .show()
 
   $('form').trigger('reset')
+  $('#sign-up-form').hide()
+  $('#non-members').hide()
 }
 
 const onSignUpFailure = function () {
@@ -14,21 +18,23 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
-  $('#auth-display').html('<p>User signed in successfully</p>')
+  $('#auth-display')
+    .html('<p>User signed in successfully</p>')
+    .show()
+    .fadeOut(4500)
 
   // reset all forms
   $('form').trigger('reset')
 
-  console.log(response)
+  // console.log(response)
   // store data from the response in my store object
   store.user = response.user
-
-  // reset single form
-  // $('#sign-in-form').trigger('reset')
-
-  // these functions are toggling what classes of html are shown
-//   $('#unAuth').hide()
-//   $('#auth').show()
+  $('#sign-in-form').hide()
+  $('#members').hide()
+  $('#non-members').hide()
+  $('#dashboard').show()
+  $('#sign-out-button').show()
+  $('#buttons').show()
 }
 
 const onSignInFailure = () => {
@@ -36,7 +42,10 @@ const onSignInFailure = () => {
 }
 
 const onChangePasswordSuccess = function () {
-  $('#auth-display').html('<p>User changed password successfully</p>')
+  $('#auth-display')
+    .html('<p>User changed password successfully</p>')
+    .show()
+    .fadeOut(4500)
 
   $('form').trigger('reset')
 }
@@ -46,12 +55,17 @@ const onChangePasswordFailure = function () {
 }
 
 const onSignOutSuccess = function () {
-  $('#auth-display').html('<p>User signed out successfully</p>')
+  $('#auth-display')
+    .html('<p>User signed out successfully</p>')
+    .show()
+    .fadeOut(4500)
 
   $('form').trigger('reset')
   // these functions are hiding the game and showing the log in
-//   $('#auth').hide()
-//   $('#unAuth').show()
+  $('#dashboard').hide()
+  $('#start').show()
+  $('#members').show()
+  $('#non-members').show()
 }
 
 const onSignOutFailure = function () {
