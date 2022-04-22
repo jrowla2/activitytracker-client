@@ -14,7 +14,8 @@
   <body>
       <br>
       <h1>Outdoor Activity Tracker</h1>
-      <img src="https://raw.githubusercontent.com/jrowla2/activitytracker-client/main/public/istockphoto-165731521-612x612.jpeg" alt="bike image" style="width:250px;height: 250px;"> <hr>
+      <img src="https://raw.githubusercontent.com/jrowla2/activitytracker-client/main/public/istockphoto-165731521-612x612.jpeg" alt="bike image" style="width:250px;height: 250px;"> 
+      <br></br>
       <div id="start">
         <button class="member-s" id="members" type="submit">Members</button>
         <button class="member-s" id="non-members">Non-members</button>
@@ -51,19 +52,20 @@
         <h3>Activity Dashboard</h3>
         <div class="buttons">
           <button id="sign-out-button" class="Sign-out">Sign-Out</button>
-          <button id="change-password-button" type="submit">Change Password</button>
-          <button id="tracks-index-button">Show All Activity</button>
-          <button id="track-create-button">Track New Activity</button>
-          <button id="track-update-button">Update Previous Activity</button>
-          <button id="track-show-button">Find One Activity</button>
-          <button id="track-delete-button">Delete One Activity</button>
+          <button id="change-password-button" type="submit">Update Password</button>
+          <button id="tracks-index-button">Activities</button>
+          <button id="track-create-button">Create</button>
+          <button id="track-update-button">Update</button>
+          <button id="track-show-button">Find</button>
+          <button id="track-delete-button">Delete</button>
+          <br></br>
         </div>
 
         <form id="change-password-form">
-          <h5>Change Password Below</h5>
+          <h5>Update Password Below</h5>
           <input name="passwords[old]" type="password" placeholder="Enter old password">
           <input name="passwords[new]" type="password" placeholder="Enter new password"><br>
-          <button id="commit-pw-change" type="submit">Change Password</button>
+          <button id="commit-pw-change" type="submit">Save</button>
         </form>
 
         
@@ -72,18 +74,16 @@
           <input type="text" name="track[id]" placeholder="Track ID Here" required><br>
           <button type="submit">Get Activity</button>
         </form>
-        <hr>
     
         
         <form id="tracks-destroy" class="todo">
           <h2>Delete An Activity</h2>
           <input type="text" name="track[id]" placeholder="Track ID Here" required><br>
-          <button type="submit">Delete Activity</button>
+          <button type="submit">Delete</button>
         </form>
         <div id="tracks-destroy-message"></div>
-        <hr>
-    
-        
+
+  
         <form id="tracks-update" class="todo">
           <h2>Update an Activity</h2>
           <input type="text" name="track[id]" id="track-id-update" placeholder="Activity ID" required>
@@ -94,10 +94,9 @@
           <input type="text" name="track[duration]" placeholder="Duration" required>
           <input type="text" name="track[with]" placeholder="With friends?" required>
           <input type="text" name="track[comments]" placeholder="Notes" required><br>
-          <button type="submit">Update Activity</button>
+          <button type="submit">Update</button>
         </form>
         <div id="tracks-update-message"></div>
-        <hr>
     
         
         <form id="tracks-create" class="todo">
@@ -109,10 +108,9 @@
           <input type="text" name="track[duration]" placeholder="Duration" required>
           <input type="text" name="track[with]" placeholder="With Friends?" required>
           <input type="text" name="track[comments]" placeholder="Notes" required><br>
-          <button type="submit">Store Activity</button>
+          <button type="submit">Create</button>
         </form>
         <div id="tracks-create-message"></div>
-        <hr>
       
         <section>
           <div id="error-message"></div>

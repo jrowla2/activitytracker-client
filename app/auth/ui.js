@@ -51,7 +51,7 @@ const onChangePasswordSuccess = function () {
 }
 
 const onChangePasswordFailure = function () {
-  $('#auth-display').html('<p>Error while changing password</p>')
+  $('#auth-display').html('<p>Error while changing password</p>').show()
 }
 
 const onSignOutSuccess = function () {

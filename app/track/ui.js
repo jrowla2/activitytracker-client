@@ -6,7 +6,7 @@ const onIndexSuccess = function (responseData) {
 
   // log the information we get back from the API so we know how we can
   // interact with it.
-  console.log(responseData.tracks)
+  // console.log(responseData.tracks)
 
   // create a string that will store the html for all of the books we want to
   // display on the page. Start as an empty string.
@@ -32,13 +32,13 @@ const onIndexSuccess = function (responseData) {
     `
   })
   // set the html for all of our books all at once
-  $('#track-display').html(tracksHtml)
+  $('#track-display').html(tracksHtml).show()
 }
 
 const onShowSuccess = function (responseData) {
   // log the information we get back from the API so we know how we can
   // interact with it.
-  console.log(responseData)
+  // console.log(responseData)
 
   // build HTML element with data for one book
   const trackHtml = `
@@ -52,7 +52,7 @@ const onShowSuccess = function (responseData) {
   `
 
   // replace whatever was in the books-display element with our bookHtml
-  $('#track-display').html(trackHtml)
+  $('#track-display').html(trackHtml).show()
 
   // reset all forms
   $('form').trigger('reset')
