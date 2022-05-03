@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Outdoor Activity Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body>
+      <br>
+      <h1>Outdoor Activity Tracker</h1>
+      <img src="https://raw.githubusercontent.com/jrowla2/activitytracker-client/main/public/istockphoto-165731521-612x612.jpeg" alt="bike image" style="width:250px;height: 250px;"> 
+      <br></br>
+      <div id="start">
+        <button class="member-s" id="members" type="submit">Members</button>
+        <button class="member-s" id="non-members">Non-members</button>
+      </div>
+
+      <div class="displays">
+        <section id="auth-display"></section>
+        <section id="auth-display1"></section>
+        <section id="auth-display3"></section>
+        <section id="auth-display4"></section>
+        <section id="auth-display-sign-in"></section>
+        <section id="ch-pass-display"></section>
+        <section id="display-c"></section>
+        <section id="activity-display"></section>
+      </div>
+
+      <form id="sign-up-form">
+        <h3>Sign-up</h3>
+        <input name="credentials[email]" type="email" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Enter password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again"><br>
+        <button type="submit">Sign-Up</button>
+      </form>
+
+      <form id="sign-in-form" class="signUp">
+        <h3>Sign-in</h3>
+        <input name="credentials[email]" type="email" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Enter password"><br>
+        <button id="sign-in-button" type="submit">Sign-In</button>
+      </form>
+
+    <!-- dashboard user view -->
+      <div id="dashboard">
+        <h3>Activity Dashboard</h3>
+        <div class="buttons">
+          <button id="sign-out-button" class="Sign-out">Sign-Out</button>
+          <button id="change-password-button" type="submit">Update Password</button>
+          <button id="tracks-index-button">Activities</button>
+          <button id="track-create-button">Create</button>
+          <button id="track-update-button">Update</button>
+          <button id="track-show-button">Find</button>
+          <button id="track-delete-button">Delete</button>
+          <br></br>
+        </div>
+
+        <form id="change-password-form">
+          <h5>Update Password Below</h5>
+          <input name="passwords[old]" type="password" placeholder="Enter old password">
+          <input name="passwords[new]" type="password" placeholder="Enter new password"><br>
+          <button id="commit-pw-change" type="submit">Save</button>
+        </form>
+
+        
+        <form id="tracks-show" class="todo">
+          <h2>Show an Activity</h2>
+          <input type="text" name="track[id]" placeholder="Track ID Here" required><br>
+          <button type="submit">Get Activity</button>
+        </form>
+    
+        
+        <form id="tracks-destroy" class="todo">
+          <h2>Delete An Activity</h2>
+          <input type="text" name="track[id]" placeholder="Track ID Here" required><br>
+          <button type="submit">Delete</button>
+        </form>
+        <div id="tracks-destroy-message"></div>
+
+  
+        <form id="tracks-update" class="todo">
+          <h2>Update an Activity</h2>
+          <input type="text" name="track[id]" id="track-id-update" placeholder="Activity ID" required>
+          <input type="date" name="track[date]" placeholder="Date" required>
+          <input type="text" name="track[activity]" placeholder="Activity Type" required>
+          <input type="text" name="track[location]" placeholder="Location" required>
+          <input type="text" name="track[distance]" placeholder="Distance" required>
+          <input type="text" name="track[duration]" placeholder="Duration" required>
+          <input type="text" name="track[with]" placeholder="With friends?" required>
+          <input type="text" name="track[comments]" placeholder="Notes" required><br>
+          <button type="submit">Update</button>
+        </form>
+        <div id="tracks-update-message"></div>
+    
+        
+        <form id="tracks-create" class="todo">
+          <h2>Track Your Activity</h2>
+          <input type="date" name="track[date]" placeholder="Date" required>
+          <input type="text" name="track[activity]" placeholder="Activity Type" required>
+          <input type="text" name="track[location]" placeholder="Location" required>
+          <input type="text" name="track[distance]" placeholder="Distance" required>
+          <input type="text" name="track[duration]" placeholder="Duration" required>
+          <input type="text" name="track[with]" placeholder="With Friends?" required>
+          <input type="text" name="track[comments]" placeholder="Notes" required><br>
+          <button type="submit">Create</button>
+        </form>
+        <div id="tracks-create-message"></div>
+      
+        <section>
+          <div id="error-message"></div>
+          <div id="track-display"></div>
+        </section>
+
+      </div>
+    </body> 
+</html>

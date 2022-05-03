@@ -1,0 +1,96 @@
+@import '~bootstrap/scss/bootstrap';
+
+#sign-up-form {
+    display: none;
+
+}
+
+h1 {
+    font-family: fantasy;
+    margin-top: 50px;
+}
+
+#sign-in-form {
+    display: none;
+}
+
+#change-password-form {
+    display: none;
+}
+
+.member-s {
+    background-color: rgb(81, 79, 79);
+    color: #dee2e6;;
+}
+
+#sign-out-button {
+    display: none;
+    background-color: rgb(76, 104, 132);
+    color: white;
+    border-radius: 10%;
+    transition: 150ms;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+#change-password-button {
+    background-color: rgb(76, 104, 132);
+    color: white;
+    border-radius: 10%;
+    transition: 150ms;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+}
+
+#dashboard {
+    display: none;
+}
+
+.todo {
+
+    display: none;
+    color: solid black;
+}
+
+.enter {
+    display: none;
+}
+
+// div.displays {
+//     float: right;
+//     height: 4%;
+//     width: 50%;
+// }
+
+body {
+    text-align: center;
+    margin: auto;
+    width: 55%;
+    padding: 10px;
+    background-color: darkgrey;
+}
+
+@media only screen and (max-width: 500px) {
+
+    body {
+        font-size: 120%;
+        width: 95%;
+        margin: 5px;
+        background-color: rgb(23, 104, 93)
+    }
+}
+
+img {
+    border-radius: 8px;
+    filter: drop-shadow(0 0 5px rgb(13, 13, 26));
+}
+
+.failure {
+    color: #ff0000;
+}
+
+.success {
+    color: #008000;
+}
