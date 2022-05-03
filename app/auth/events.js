@@ -6,7 +6,6 @@ const getFormFields = require('../../lib/get-form-fields.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('sign up')
 
   // get data from form
   const form = event.target
@@ -42,7 +41,6 @@ const onChangePassword = function (event) {
   // get data from form
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
 
   authApi
     .changePassword(data)
