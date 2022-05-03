@@ -10,7 +10,7 @@ const onSignUp = function (event) {
   // get data from form
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
+  // console.log(data)
 
   authApi
     .signUp(data)
@@ -24,7 +24,7 @@ const onSignIn = function (event) {
   // get data from form
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
+  // console.log(data)
 
   authApi
     .signIn(data)
